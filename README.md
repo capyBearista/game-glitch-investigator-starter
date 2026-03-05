@@ -11,7 +11,7 @@ It wrote the code, ran away, and now the game is unplayable.
 
 ## 🛠️ Setup
 
-1. Set up the Python virtual environment: `python -m venv .venv && source .venv/bin/activate` (Linux/Mac) or `.venv\Scripts\activate` (Windows)
+1. Set up the Python virtual environment: `python -m venv .venv && source .venv/bin/activate` (Linux/Mac) or `python -m venv .venv && .venv\Scripts\activate` (Windows)
 2. Install dependencies: `pip install -r requirements.txt`
 3. Run the broken app: `python -m streamlit run app.py`
 
