@@ -25,18 +25,17 @@ I found five separate bugs in the original app:
 
 ## 2. How did you use AI as a teammate?
 
-- Which AI tools did you use on this project (for example: ChatGPT, Gemini, Copilot)?
-- Give one example of an AI suggestion that was correct (including what the AI suggested and how you verified the result).
-- Give one example of an AI suggestion that was incorrect or misleading (including what the AI suggested and how you verified the result).
+I exclusively used GitHub Copilot (VS Code extension) for this projectj. I found that the AI didn't actually make any errors in my case (which was surprising), but this could be explained since Copilot automatically selected an advanced model (GPT-5.3-Codex). In fact, I had to stop it from just fixing the entire program (which I verified via testing) since I wanted to fix the bugs one at a time and not fix everything anyway.
+
+After each edit, I'd test the app to see if the bug was fixed and to make sure no new bugs were introduced. For example, after fixing the hints, I tested by entering various guesses and verifying that the hints were correct based on the secret number.
 
 ---
 
 ## 3. Debugging and testing your fixes
 
-- How did you decide whether a bug was really fixed?
-- Describe at least one test you ran (manual or using pytest)  
-  and what it showed you about your code.
-- Did AI help you design or understand any tests? How?
+I only determined a bug to be fixed after manually verifying it (i.e., I ran the app, interacted with the specific behavior I was trying to fix).
+
+As for tests, I had Copilot write some pytest tests for me. While it initially failed (used incorrect syntax since it seemingly thought the test file was in the same working directory as the app), I just had to prompt the agent saying it was returning a failure and it fixed the test.
 
 ---
 
