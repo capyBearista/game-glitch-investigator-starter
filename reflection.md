@@ -1,12 +1,25 @@
 # 💭 Reflection: Game Glitch Investigator
 
-Answer each question in 3 to 5 sentences. Be specific and honest about what actually happened while you worked. This is about your process, not trying to sound perfect.
-
 ## 1. What was broken when you started?
 
-- What did the game look like the first time you ran it?
-- List at least two concrete bugs you noticed at the start  
-  (for example: "the secret number kept changing" or "the hints were backwards").
+I found five separate bugs in the original app:
+  1. The hints were wrong; e.g., it would arbitrarily say "Go LOWER!" and "Go HIGHER!" regardless of the actual secret number. For example, a guess of `-999999` might result in a "Go HIGHER!" hint when the secret number was `25`.
+  2. Sometimes guesses just wouldn't be logged despite being submitted and counting as a guess.
+    - Below is an example of a game where I simply entered `1` through `11` as guesses, with `11` only showing up in history after the final guess was already used up.
+```json
+[
+  0:1
+  1:2
+  2:3
+  3:5
+  4:7
+  5:9
+  6:11
+]
+```
+  3. The *displayed* number of attempts lefts only ticks down on the second guess onwards despite the first guess actually counting as an attempt. This causes the attempts to run out when `Attempts Left` shows `1` instead of attempts left showing `0`.
+  4. The difficulties are wrong. The Hard difficulty is easier than Normal (it uses range 1 to 50 while Normal uses range 1 to 100).
+  5. If you run out of attempts, hitting `New Game` doesn't actually reset the game aside from resetting the attempts left to `0`.
 
 ---
 

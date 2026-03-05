@@ -1,6 +1,12 @@
 def get_range_for_difficulty(difficulty: str):
     """Return (low, high) inclusive range for a given difficulty."""
-    raise NotImplementedError("Refactor this function from app.py into logic_utils.py")
+    # FIX: Copilot handled difficulty change flawlessly as it was a simple bug.
+    ranges = {
+        "Easy": (1, 20),
+        "Normal": (1, 50),
+        "Hard": (1, 100),
+    }
+    return ranges.get(difficulty, (1, 100))
 
 
 def parse_guess(raw: str):
@@ -9,7 +15,18 @@ def parse_guess(raw: str):
 
     Returns: (ok: bool, guess_int: int | None, error_message: str | None)
     """
-    raise NotImplementedError("Refactor this function from app.py into logic_utils.py")
+    # FIX: Moved logic into logic_utils.py using Copilot Agent mode
+    if raw is None:
+        return False, None, "Enter a guess."
+
+    cleaned = raw.strip()
+    if cleaned == "":
+        return False, None, "Enter a guess."
+
+    try:
+        return True, int(cleaned), None
+    except ValueError:
+        return False, None, "That is not a number."
 
 
 def check_guess(guess, secret):
