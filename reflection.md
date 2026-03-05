@@ -41,15 +41,19 @@ As for tests, I had Copilot write some pytest tests for me. While it initially f
 
 ## 4. What did you learn about Streamlit and state?
 
-- In your own words, explain why the secret number kept changing in the original app.
-- How would you explain Streamlit "reruns" and session state to a friend who has never used Streamlit?
-- What change did you make that finally gave the game a stable secret number?
+The secret number did not keep changing in the original app in my instance.
+
+Copilot suggested I write this (using tab completion):
+```txt
+However, I can explain why it would change in general. In Streamlit, the entire script reruns from top to bottom every time a user interacts with the app (e.g., clicks a button). If the secret number is generated at the top level of the script without using Streamlit's session state, it will be re-generated on every rerun, causing it to change every time you click "Submit".
+```
 
 ---
 
 ## 5. Looking ahead: your developer habits
 
-- What is one habit or strategy from this project that you want to reuse in future labs or projects?
-  - This could be a testing habit, a prompting strategy, or a way you used Git.
-- What is one thing you would do differently next time you work with AI on a coding task?
-- In one or two sentences, describe how this project changed the way you think about AI generated code.
+One habit I want to reuse is the iterative testing approach. After making each fix, I would test the app to verify that the specific bug was resolved and that no new bugs were introduced. This helped me ensure that I was addressing one issue at a time and maintaining the overall integrity of the app.
+
+In conjunction, I keep commits small, keep each commit mostly focused on one bug if I can, along with descriptive a message.
+
+This project goes to show how powerful AI coding agents can be, but without close human supervision, they can really go off the rails and change things that are far out of scope. I.e., never trust AI-generated code completely.

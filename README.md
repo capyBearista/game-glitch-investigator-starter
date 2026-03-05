@@ -26,9 +26,9 @@ It wrote the code, ran away, and now the game is unplayable.
 
 ## 📝 Document Your Experience
 
-- [ ] Describe the game's purpose.
-- [ ] Detail which bugs you found.
-- [ ] Explain what fixes you applied.
+- [x] Game purpose: a Streamlit number-guessing game where the player finds a secret number within limited attempts
+- [x] Bugs found: directions from hints were wrong, guess/secret comparison issues, logic split across files
+- [x] Fixes applied: corrected guess comparison/hints, moved core logic to `logic_utils.py`, added pytest tests
 
 ## 📸 Demo
 
